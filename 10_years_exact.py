@@ -1,5 +1,5 @@
 import math
-t = 51
+t = 111
 alpha = 0.1
 rho = 0.01
 p = (1-alpha)*rho
