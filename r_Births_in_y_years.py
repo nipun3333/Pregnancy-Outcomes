@@ -13,11 +13,11 @@ def find_ndash(t, r, m, v, w):
 
 if __name__ == '__main__':
     m = 15
-    y = 15
+    y = 10
     t = y*12 - 9
     w = 6
     rho = 0.01
-    alpha = 0.25
+    alpha = 0.1
     rem = list()
 
 
@@ -57,8 +57,8 @@ if __name__ == '__main__':
         print(f"Probability of atleast {r} birth/births : {ans}")
         rem.append(ans)
 
-plt.plot(rem)
-plt.title(f"{y} years and {alpha*100}% Mortality")
-plt.xlabel('r - births')
-plt.ylabel('Probability of atleast r-birth')
-plt.show()
+    plt.plot(rem)
+    plt.title(f"{y} years and {alpha*100}% Mortality")
+    plt.xlabel('r - births')
+    plt.ylabel('Probability of atleast r-birth')
+    plt.show()
