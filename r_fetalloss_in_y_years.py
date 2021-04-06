@@ -1,6 +1,7 @@
 from scipy.stats import binom
 from scipy.special import comb
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Assumptions Made which has to be Validated
 # 1. Probability of Misscarriage/StillBirth  = 0.1
@@ -52,24 +53,43 @@ if __name__ == '__main__':
     print(f"Probability of 0 Stillbirth/Misscarriage : {ans}")
     rem.append(ans)
     for r in range(1, 6):
-        temp = (alpha)**r
+        r_curr = r
+        temp = (alpha)**r_curr
         ans = 0
-        maxn = findn(t, r, m, w)
+        maxn = findn(t, r_curr, m, w)
         for n in range(maxn + 1):
             # print("========", v)
             temp2 = (1-alpha) ** n
             # temp1 = comb(r+v-1, v) Does not work when r == 0 and thus drives answer to zero
-            temp1 = comb(r + n - 1, n)
-            ndash = find_ndash(t, r, m, n, w)
-            temp3 = (1 - binom.cdf(r + n - 1, ndash, rho))
+            temp1 = comb(r_curr + n - 1, n)
+            ndash = find_ndash(t, r_curr, m, n, w)
+            temp3 = (1 - binom.cdf(r_curr + n - 1, ndash, rho))
             ans += (temp1*temp2*temp3)
             # print("=======", ans)
         ans *= temp
-        print(f"Probability of atleast {r} Stillbirths/Misscarriages : {ans}")
-        rem.append(ans)
+        k = ans
+        r_curr += 1
+        temp = (alpha)**r_curr
+        ans = 0
+        maxn = findn(t, r_curr, m, w)
+        for n in range(maxn + 1):
+            # print("========", v)
+            temp2 = (1-alpha) ** n
+            # temp1 = comb(r+v-1, v) Does not work when r == 0 and thus drives answer to zero
+            temp1 = comb(r_curr + n - 1, n)
+            ndash = find_ndash(t, r_curr, m, n, w)
+            temp3 = (1 - binom.cdf(r_curr + n - 1, ndash, rho))
+            ans += (temp1*temp2*temp3)
+            # print("=======", ans)
+        ans *= temp
+        k -= ans
+        print(f"Probability of  {r} Stillbirths/Misscarriages : {k}")
+        rem.append(k)
 
     plt.plot(rem)
-    plt.title(f"{y} years and {alpha*100}% Mortality")
+    plt.title(f"PDF of RV Fetal Loss\n{y} years and {alpha*100}% Mortality")
+    plt.xticks(np.arange(0, 5, 1))
+    plt.yticks(np.arange(0, 1.1, 0.05))
     plt.xlabel('r - fetal-loss')
-    plt.ylabel('Probability of atleast r-fetal-loss')
+    plt.ylabel('Probability of r-fetal-loss')
     plt.show()

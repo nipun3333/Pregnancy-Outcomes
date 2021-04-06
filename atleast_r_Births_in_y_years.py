@@ -17,7 +17,7 @@ if __name__ == '__main__':
     t = y*12 - 9
     w = 6
     rho = 0.01
-    alpha = 0.1
+    alpha = 0.25
     rem = list()
 
 
@@ -58,7 +58,7 @@ if __name__ == '__main__':
         rem.append(ans)
 
     plt.plot(rem)
-    plt.title(f"{y} years and {alpha*100}% Mortality")
+    plt.title(f"Atleast r-birth in {y} years\n{alpha*100}% Mortality")
     plt.xlabel('r - births')
     plt.ylabel('Probability of atleast r-birth')
     plt.show()
