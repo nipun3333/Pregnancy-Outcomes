@@ -37,35 +37,42 @@
 \textbf{
 \begin{center}
 {
-\large{School of Engineering and Applied Science (SEAS), Ahmedabad University}\vspace{4mm}
+\large{School of Engineering and Applied Science (SEAS), Ahmedabad University}\vspace{3mm}
 }
 \end{center}
 %
 \begin{center}
-\large{B.Tech(CSE) Semester IV: Probability and Stochastic Processes (MAT 277) }\\ \vspace{3mm}
+\large{B.Tech(CSE) Semester IV: Probability and Stochastic Processes (MAT 277) }\\ \vspace{2mm}
 \end{center}
 }
 \begin{itemize}
 \item Group No : BB14
-\item Group Members :  %\item Roll no: s1749002 (Ph.d)
+\item Group Members : \\ Jinesh Salot (AU1940178), Kathan Shah (AU1940152), Nipun Patel (AU1940033), Poojan Gandhi (AU1940125), Rohan Parikh (AU1940157), Samkit Kundalia (AU1940021), Tirth Patel (AU1940137)
+ %\item Roll no: s1749002 (Ph.d)
 %\item Associated with Project: DST-UKIERI
 \item Project Title: 
 
 \end{itemize} 
 
 \section {Justify how probabilistic model/PSP concept is used in your project. How uncertainty is modeled?}
-{The objective of this project was to estimate the number of live births and fetal losses could occur in a given span of time. In order to do this, we have  used probability concepts like Binomial theorem, Multinomial theorem, probability distribution functions, cumulative distribution functions and Poisson Distribution.}
+{The project objective was to estimate the number of live births and fetal losses could occur in a given span of time. In order to do this, we have  used probability concepts like {\slshape Binomial Theorem, Multinomial Theorem, Probability Distribution Functions, Cumulative Distribution Functions} and {\slshape Poisson Distribution.}}
 \begin{center}
-	\Large Uncertainties
+	{\large {\bfseries Uncertainties}}
 \end{center}
 
-During the pregnancy, many uncertain events take place such as conception, mortality, fetal losses and number of births over a period of time,Occurrence of conception even after using contraceptives.\\
+Pregnancy outcomes are uncertain in nature, that depend on a lot of factors like: coital frequency,
+susceptibilty,
+probability of conception,
+use of contraceptives,
+probability of fetal loss,
+fecundability and
+length of menstrual cycle etc. %Occurrence of conception even after using contraceptives.\\
 
-To find out the probability of conception, we modelled it as a Binomial Random Variable and.
+To ascertain the Conception Probability - we modelled it as a Binomial Random Variable.
 We considered the probability of fetal losses to be fixed by deciding the mortality rate for the fetuses in order to find the pregnancy leading to Live Birth for different intervals of time . We also found the mean interval of months, that is the difference between two live births for the total period of 10,15 years etc.\\
 
 Probability of conception in a fertile time follows geometric distribution\\
-
+{\large insert jinesh's part}
 %% Insert AEZ Jinesh's part
 
 We were able to model the probability of {\itshape r} numbers of live births given the probability of fetal mortality over the span of {\itshape t} years.
@@ -77,10 +84,12 @@ We were able to model the probability of {\itshape r} numbers of live births giv
 \section{Clearly enlist the new things done in the coding part, excluding the shared code. [If no new code is written/added/modified, then please write NA]}
 
 \begin{enumerate}
-    \item Mention code change-1
-    \item Mention code change-2
+    %\item Mention code change-1
+    \item Modelled probability of conception which previously the author had taken constant. We did it using concepts of conditional probability and binomial random variables.
+    \item Used coital frequency, number of fertile days, coital frequency between fertile days and days of intercourse occurred in fertile period as parameter to find probability of conception which was taken constant by author previously.
+    \item Tuned the authors model to find the probability of exactly r fetal loss in a period of y years.
+    \item {\large TOBEDONE} %TO BE DONE AEZ 4th Point
 \end{enumerate}
-
 
 
 \section{Contribution of team members}	
@@ -99,7 +108,7 @@ Task-3 &      &       &        &          &     &       &       \\ \hline
 \subsection{Non-Technical contribution of all team members }
 Enlist the non-technical contribution of members in the table. Redefine the tasks (e.g Task-1 as report writing etc.)
 \begin{table}[h]
-\begin{tabular}{|l|l|l|l|l|l|l|l}
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
 	\hline
 	Tasks  & Jinesh Salot & Kathan Shah & Nipun Patel & Poojan Gandhi & Rohan Parikh & Samkit Kundalia & Tirth Patel \\ \hline
 	Task-1 &      &       &        &          &     &       &         \\ \hline
@@ -110,9 +119,10 @@ Enlist the non-technical contribution of members in the table. Redefine the task
 
 \section{Any innovation done considering the society/neighborhood problem?}
 
-\section{Enumerate the inferences derived from user-centric perspective.}
-We find the probability of conception using the length of the cycle, number of fertile days in that cycle, number of coital acts in that cycle as a factor. This will be useful to couples as using this they would be able to calculate the probability of conception when they use contraceptive.\\
 
+\section{Enumerate the inferences derived from user-centric perspective.}
+We find the probability of conception using the length of the cycle, number of fertile days in that cycle and number of coital acts in that cycle as a factor. This will be useful to couples for family planning by calculating the probability of conception when they use contraceptives.\\
+`
 We have calculated the mean number of months between two live births given the probability of conception (considering that the couple is using contraceptives) taking the mortality rate of fetuses as a factor. This would be useful to couples who use contraceptives and want to know the chances of the number of births of the child and also the time interval of birth between them even after using contraceptives.\\
 \begin{table}[h]
 \begin{tabular}{|c|c|}
