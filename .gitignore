@@ -1,1 +1,4 @@
 .idea/
+*
+!report/main.tex
+!report/main.pdf
