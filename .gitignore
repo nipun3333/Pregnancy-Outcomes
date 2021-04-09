@@ -1,4 +1,6 @@
 .idea/
-*
-!report/main.tex
-!report/main.pdf
+report/main.aux
+report/main.bbl
+report/main.blg
+report/main.log
+report/main.synctex.gz
