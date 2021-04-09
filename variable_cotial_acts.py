@@ -49,7 +49,7 @@ if __name__ == '__main__':
     # min_row = 10
     # max_row = -1
     # Innovation
-    max_cotial_acts = 2
+    max_cotial_acts = 10
     rho = find_rho(max_cotial_acts)
 
     print("Fetal Moratlity Percent : ", alpha*100, "%")
