@@ -14,11 +14,11 @@ def find_ndash(t, r, m, v, w):
 
 if __name__ == '__main__':
     m = 15
-    y = 15
+    y = 10
     t = y*12 - 9
     w = 6
-    rho = 0.2
-    alpha = 0.25
+    rho = 0.01
+    alpha = 0.1
     rem = list()
 
 

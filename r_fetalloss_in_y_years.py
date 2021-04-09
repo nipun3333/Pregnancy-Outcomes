@@ -29,7 +29,7 @@ if __name__ == '__main__':
     t = y*12 - 9
     w = 15
     rho = 0.01
-    alpha = 0.1
+    alpha = 0.25
     rem = list()
 
 
