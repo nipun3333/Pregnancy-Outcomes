@@ -31,8 +31,9 @@
 \renewcommand{\baselinestretch}{1}
 \pagenumbering{arabic}
 \usepackage{ragged2e}
-\renewcommand{\baselinestretch}{1.5}
+\renewcommand{\baselinestretch}{1.358}
 \graphicspath{ {./images/}}
+
 
 \begin{document}
 
@@ -62,29 +63,50 @@ The Coital Frequency is modelled using {\slshape Poisson Random Variable}. Its {
 
 Probability of conception is assumed to be fixed in the base article but we have modelled it using {\slshape Geometric Distribution, PMF and CMF} as part of our innovation work. Using {\slshape Binomial Distribution} where probability of success is the probability of conception and using {\slshape Cumulative Distribution Function} over all ranges of {\slshape X} and {\slshape v} where is {\slshape X} describes the event of a live birth and {\slshape v} describes the event of a fetal loss.}
 \begin{center}
-	{\large {\bfseries Uncertainties}}
+	{\large {\bfseries Modelling of Uncertainties}}
 \end{center}
-Pregnancy outcomes are uncertain in nature, that depend on a lot of factors like: coital frequency,
-susceptibilty,
-probability of conception,
-use of contraceptives,
-probability of fetal loss,
-number of births over a period of time,
-fecundability and
-fertility period and length of menstrual cycle etc. \\
-To ascertain the Conception Probability - we modelled it as a {\slshape Binomial Random Variable}.
-We considered the probability of fetal losses to be fixed by deciding the mortality rate for the fetuses in order to find the pregnancy leading to Live Birth for different intervals of time. We also found the mean interval of months, that is the difference between two live births for the total period of 10,15 years etc.\\
-We were able to model the probability of {\itshape r} numbers of live births given the probability of fetal mortality over the span of {\itshape t} years. Our model also estimates the mean difference between two live births in a span of different {\slshape t} years.
+Many uncertain events occur before, during and after pregnancy like the {\slshape Coital Frequency}, Fertile Period during Menstrual Cycle , Conception, Fetal Losses, Number of births over a certain period of time.
+The Coital Frequency is modelled using Poisson Random Variable and lambda will be the mean daily probability of intercourse in a month of 30 days. The fertile period is considered to be 4-5 days. The probability of fetal loss is considered to be fixed in order to find the pregnancy leading to live birth for different intervals of time (in years). 
+Probability of conception is assumed to be fixed in the base article but we have modelled it using Geometric Distribution, PMF and CMF as part of our innovation work. Using Binomial Distribution where probability of success is the probability of conception and using Cumulative distribution Function over all ranges of X and v where as X describes the event of a live birth and v describes the event of a fetal loss, we modelled the probability of at-least r live birth in a t given years over various mortality rates. Also our model estimates the mean difference between two live births in a span of different t years.
+
+%Pregnancy outcomes are uncertain in nature, that depend on a lot of factors like: coital frequency,
+%susceptibilty,
+%probability of conception,
+%use of contraceptives,
+%probability of fetal loss,
+%number of births over a period of time,
+%fecundability and
+%fertility period and length of menstrual cycle etc. \\
+%To ascertain the Conception Probability - we modelled it as a {\slshape Binomial Random Variable}.
+%We considered the probability of fetal losses to be fixed by deciding the mortality rate for the fetuses in order to find the pregnancy leading to Live Birth for different intervals of time. We also found the mean interval of months, that is the difference between two live births for the total period of 10,15 years etc.\\
+%We were able to model the probability of {\itshape r} numbers of live births given the probability of fetal mortality over the span of {\itshape t} years. Our model also estimates the mean difference between two live births in a span of different {\slshape t} years.
 
 \section{Clearly enlist the new things done in the coding part, excluding the shared code.}
 
-\begin{enumerate}
-    %\item Mention code change-1
-    \item Modelled probability of conception which previously the author had taken constant. We did it using concepts of conditional probability and binomial random variables.
-    \item Used coital frequency, number of fertile days, coital frequency between fertile days and days of intercourse occurred in fertile period as parameter to find probability of conception which was taken constant by author previously.
-    \item Tuned the authors model to find the probability of exactly r fetal loss in a period of y years.
+%\begin{enumerate}
+%    %\item Mention code change-1
+%    \item Modelled probability of conception which previously the author had taken constant. We did it using concepts of conditional probability and binomial random variables.
+%    \item Used coital frequency, number of fertile days, coital frequency between fertile days and days of intercourse occurred in fertile period as parameter to find probability of conception which was taken constant by author previously.
+%    \item Tuned the authors model to find the probability of exactly r fetal loss in a period of y years.
     %\item {\large TOBEDONE} %TO BE DONE AEZ 4th Point
-\end{enumerate}
+    {\large Code Changes -1}
+\begin{itemize} 
+	\item Probability of conception is taken constant in the base paper assuming they have used contraceptives. So we have modelled the probability of conception as our innovation part. 
+	\item We have taken certain new parameters like coital frequency, fertile period, menstrual cycle length, no. of coital acts during fertile period, no. of days when at least one coital act happened in the fertile period, Prob. of fetal loss.
+	\item Based on those parameters we modelled the probability conception for low, intermediate and high cycle based on the cycle length and from that we have estimated the effective probability of conception (fecundability). 
+	\item That probability we have used in our main model and find the probability of at-least r live birth in t years of time and plotted the graph for the same.	
+\end{itemize}
+{\large Code Changes -2}
+\begin{itemize}
+	\item In the base paper the author varies the number of fetal loss over a period of time and derives the probability of r births in y years. By taking the similar approach as the author we varied the number of births over the period of time to get the probability mass function of fetal loss.
+\end{itemize}
+{\large Code Changes -3}
+\begin{itemize}
+	\item We have estimated the mean month for the occurrence of r-live birth. For that we have taken into account the gestation period and   postpartum in-fecundability period to be constant.
+	\item From that we have estimated the mean difference between two live births in terms of months. 
+\end{itemize}
+
+%\end{enumerate}
 \section{Contribution of team members}	
 \subsection{Technical contribution of all team members }
 \begin{table}[H]
