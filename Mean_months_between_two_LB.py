@@ -1,10 +1,10 @@
-m = 15
-w = 6
-rho = 0.3
-alpha = 0
-q = 1 - rho
-p = (1-alpha)*rho
-pi = alpha*rho
+m = 15   # infecundable period (in months) after L conception
+w = 6    # infecundable period (in months) after fetal loss
+rho = 0.270170263818779   # probability of conception (assuming contraceptive is used)
+alpha = 0.25  # aplha = mortality
+q = 1 - rho   # Monthy probability that no conception occurs
+p = (1-alpha)*rho   # Monthly probability that conception ends in live birth
+pi = alpha*rho    # Monthly probability that conception ends in fetal loss
 l = []
 
 for r in range(1, 6):
