@@ -24,12 +24,12 @@ def find_ndash(t, r, m, n, w):
 
 
 if __name__ == '__main__':
-    m = 10
-    y = 10
-    t = y*12 - 9
+    m = 9  # Non susceptible
+    y = 15  # number of years
+    t = y*12 - 9  # number of months
     w = 15
-    rho = 0.01
-    alpha = 0.25
+    rho = 0.270170263818779
+    alpha = 0.25  # aplha = mortality
     rem = list()
 
 
@@ -52,7 +52,7 @@ if __name__ == '__main__':
     ans = (1 - ans)
     print(f"Probability of 0 Stillbirth/Misscarriage : {ans}")
     rem.append(ans)
-    for r in range(1, 6):
+    for r in range(1, y//2):
         r_curr = r
         temp = (alpha)**r_curr
         ans = 0
@@ -86,10 +86,12 @@ if __name__ == '__main__':
         print(f"Probability of  {r} Stillbirths/Misscarriages : {k}")
         rem.append(k)
 
-    plt.plot(rem)
-    plt.title(f"PDF of RV Fetal Loss\n{y} years and {alpha*100}% Mortality")
-    plt.xticks(np.arange(0, 5, 1))
+    plt.plot(rem, color='black')
+    plt.title(f"PMF of RV Fetal Loss\n{y} years and {alpha*100}% Mortality")
+    plt.xticks(np.arange(0, y//2, 1))
     plt.yticks(np.arange(0, 1.1, 0.05))
+    plt.plot(rem, 'ro')
+    plt.grid()
     plt.xlabel('r - fetal-loss')
     plt.ylabel('Probability of r-fetal-loss')
     plt.show()
