@@ -129,7 +129,7 @@ if __name__ == '__main__':
     ans *= temp
     ans = (1 - ans)
 
-    rem.append(ans)
+    rem.append(1)
     for r in range(1, y - 1):
         temp = (1 - alpha) ** r
         ans = 0
@@ -148,7 +148,7 @@ if __name__ == '__main__':
         rem.append(ans)
 
     plt.plot(rem, color='black')
-    plt.title(f"{y} years and {alpha * 100}% Mortality")
+    plt.title(f"Atleast r-birth in {y} years\n{alpha*100}% Mortality")
     plt.xlabel('r - births')
     plt.plot(rem, 'ro')
     plt.grid()
