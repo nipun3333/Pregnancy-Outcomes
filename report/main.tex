@@ -10,6 +10,7 @@
  bottom=2mm,
  }
 %\usepackage[margin=0.5in]{geometry}
+\usepackage{lipsum}
 \usepackage{float}
 \usepackage{subfig}
 \usepackage{amsmath,amssymb}
@@ -24,6 +25,7 @@
 \usepackage{cite}
 %\onecolumn
 %\input{psfig}
+\usepackage{indentfirst}
 \usepackage{color}
 \usepackage{graphicx}
 \setlength{\textheight}{23.5cm} \setlength{\topmargin}{-1.05cm}
@@ -33,7 +35,9 @@
 \usepackage{ragged2e}
 \renewcommand{\baselinestretch}{1.358}
 \graphicspath{ {./images/}}
-
+\usepackage{titlesec}
+\titleformat*{\section}{\large \bfseries}
+\titleformat*{\subsection}{\normalsize \bfseries}
 
 \begin{document}
 
@@ -57,11 +61,11 @@
 \end{itemize} 
 
 \section {Justify how Probabilistic Models are used in your project. How is uncertainty modeled?}
-{The aim of our project was to estimate the probability of at-least {\slshape r} live births in given span of time and the mean difference between two live births. Probability concepts used for our modelling are {\slshape Binomial Distribution, Geometric Distribution, Poisson Distribution, Probability Mass Function (PMF) and Cumulative Mass Function (CMF).}\newline
+The aim of our project was to estimate the probability of at-least {\slshape r} live births in given span of time and the mean difference between two live births. Probability concepts used for our modelling are {\slshape Binomial Distribution, Geometric Distribution, Poisson Distribution, Probability Mass Function (PMF) and Cumulative Mass Function (CMF).\newline
 
-The Coital Frequency is modelled using {\slshape Poisson Random Variable}. Its {\slshape lambda} will be the mean daily probability of intercourse in a month of 30 days. The fertile period is considered to be 4-5 days. The probability of fetal loss is considered to be fixed in order to find the pregnancy leading to live birth for different intervals of time (in years). \\
+The Coital Frequency is modelled using {\slshape Poisson Random Variable}. Its {\slshape lambda} will be the mean daily probability of intercourse in a month of 30 days. The fertile period is considered to be 4-5 days. The probability of fetal loss is considered to be fixed in order to find the pregnancy leading to live birth for different intervals of time (in years).\\
 
-Probability of conception is assumed to be fixed in the base article but we have modelled it using {\slshape Geometric Distribution, PMF and CMF} as part of our innovation work. Using {\slshape Binomial Distribution} where probability of success is the probability of conception and using {\slshape Cumulative Distribution Function} over all ranges of {\slshape X} and {\slshape v} where is {\slshape X} describes the event of a live birth and {\slshape v} describes the event of a fetal loss.}\\
+Probability of conception is assumed to be fixed in the base article but we have modelled it using {\slshape Geometric Distribution, PMF and CMF} as part of our innovation work. Using {\slshape Binomial Distribution} where probability of success is the probability of conception and using {\slshape Cumulative Distribution Function} over all ranges of {\slshape X} and {\slshape v} where is {\slshape X} describes the event of a live birth and {\slshape v} describes the event of a fetal loss.}
 \begin{center}
 	{\large {\bfseries Modelling of Uncertainties}}
 \end{center}
@@ -69,8 +73,7 @@ Many uncertain events occur before, during and after pregnancy like the {\slshap
 
 The Coital Frequency is modelled using {\slshape Poisson Random Variable} and {\slshape $\lambda$} will be the mean daily probability of intercourse in a month of 30 days. The fertile period is considered to be 4-5 days. The probability of fetal loss is considered to be fixed in order to find the pregnancy leading to live birth for different intervals of time (in years).\\
 
-Probability of conception is assumed to be fixed in the base article but we have modelled it using {\slshape Geometric Distribution, PMF} and {\slshape CMF} as part of our innovation work. Using {\slshape Binomial Distribution} where probability of success is the probability of conception and using {\slshape Cumulative Distribution Function} over all ranges of {\slshape X} and {\slshape v} where as {\slshape X} describes the event of a live birth and {\slshape v} describes the event of a fetal loss, we modelled the probability of at-least {\slshape r} live birth in a {\slshape t} given years over various mortality rates. Also our model estimates the mean difference between two live births in a span of different {\slshape t} years.\\
-
+Probability of conception is assumed to be fixed in the base article but we have modelled it using {\slshape Geometric Distribution, PMF} and {\slshape CMF} as part of our innovation work. Using {\slshape Binomial Distribution} where probability of success is the probability of conception and using {\slshape Cumulative Distribution Function} over all ranges of {\slshape X} and {\slshape v} where as {\slshape X} describes the event of a live birth and {\slshape v} describes the event of a fetal loss, we modelled the probability of at-least {\slshape r} live birth in a {\slshape t} given years over various mortality rates. Also our model estimates the mean difference between two live births in a span of different {\slshape t} years
 %Pregnancy outcomes are uncertain in nature, that depend on a lot of factors like: coital frequency,
 %susceptibilty,
 %probability of conception,
@@ -82,7 +85,6 @@ Probability of conception is assumed to be fixed in the base article but we have
 %To ascertain the Conception Probability - we modelled it as a {\slshape Binomial Random Variable}.
 %We considered the probability of fetal losses to be fixed by deciding the mortality rate for the fetuses in order to find the pregnancy leading to Live Birth for different intervals of time. We also found the mean interval of months, that is the difference between two live births for the total period of 10,15 years etc.\\
 %We were able to model the probability of {\itshape r} numbers of live births given the probability of fetal mortality over the span of {\itshape t} years. Our model also estimates the mean difference between two live births in a span of different {\slshape t} years.
-
 \section{Clearly enlist the new things done in the coding part, excluding the shared code.}
 
 %\begin{enumerate}
@@ -91,7 +93,7 @@ Probability of conception is assumed to be fixed in the base article but we have
 %    \item Used coital frequency, number of fertile days, coital frequency between fertile days and days of intercourse occurred in fertile period as parameter to find probability of conception which was taken constant by author previously.
 %    \item Tuned the authors model to find the probability of exactly r fetal loss in a period of y years.
     %\item {\large TOBEDONE} %TO BE DONE AEZ 4th Point
-    {\large Code Changes -1}
+    {\noindent \large Code Changes -1}
 \begin{itemize} 
 	\item Probability of conception is taken constant in the base paper assuming they have used contraceptives. So we have modelled the probability of conception as our innovation part. 
 	\item We have taken certain new parameters like coital frequency, fertile period, menstrual cycle length, no. of coital acts during fertile period, no. of days when at least one coital act happened in the fertile period, Prob. of fetal loss.
@@ -151,8 +153,7 @@ Family planning is always something that is of vital importance to any couple. A
 	\label{fig:example}%
 \end{figure}
 
-We hope our effort to solve this problem serves as a pillar to future studies and groups in understanding it. With further research and understanding of interdisciplinary domains surrounding it - we believe that, our model can be of vital importance to the society. The immediate benefit of our work can be taken advantage of by stakeholders like patients, doctors, gynaecologists, obstetricians and medical societies and institutions.\\
-
+We hope our effort to solve this problem serves as a pillar to future studies and groups in understanding it. With further research and understanding of interdisciplinary domains surrounding it - we believe that, our model can be of vital importance to the society. The immediate benefit of our work can be taken advantage of by stakeholders like patients, doctors, gynaecologists, obstetricians and medical societies and institutions.
 \section{Enumerate the inferences derived from user-centric perspective.}
 We find the probability of conception using the length of the cycle, number of fertile days in that cycle and number of coital acts in that cycle as a factor. This will be useful to couples for family planning by calculating the probability of conception when they use contraceptives.\\
 
@@ -170,11 +171,11 @@ We have calculated the mean number of months between two live births given the p
 	\end{table}
 
 
-\begin{enumerate}
+\begin{itemize}
 \item Even after using the contraceptive, couples should at least expect 1 child as the expected values of births are 1.5, 1.4 and 1.2 for probability of fetal mortality=0,0.1,0.25.
 \item For couples who want to have a child there is a 20\% chance that over a 15 year period they will have 2 or 3 Stillbirths/Miscarriages.
 \item By modelling the probabilities of r births in y years we can see that even using contraceptives (thus reducing the probability of conception to 0.01) for a period of 10 years there is 0.6273 probability that at least 1 child is born.
-\end{enumerate} 
+\end{itemize} 
 
 \section{References}
 
